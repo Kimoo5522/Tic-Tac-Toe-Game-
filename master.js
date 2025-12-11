@@ -4,6 +4,25 @@ let turn = 'x';
 let gameIsFinish = false;
 let arrOfItems = [];
 
+function whoWin(num1, num2, num3){
+    if(turn == 'x'){
+            titleY.innerHTML = 'O > Winner';
+            document.getElementById('restartButton').innerHTML = 'NEW GAME';
+            titleX.innerHTML = 'X'
+            gameIsFinish = true;
+            
+        } else if( turn == 'o'){
+            titleX.innerHTML = 'X > Winner';
+            document.getElementById('restartButton').innerHTML = 'NEW GAME';
+            titleY.innerHTML = 'O';
+            gameIsFinish = true;
+            
+        }
+    document.getElementById('item' + num1).style.backgroundColor = 'gold';
+    document.getElementById('item' + num2).style.backgroundColor = 'gold';
+    document.getElementById('item' + num3).style.backgroundColor = 'gold';
+    }
+
 function winner(){
     for(let i = 1; i < 10; i++){
         arrOfItems[i] = document.getElementById('item' + i).innerHTML;
@@ -23,38 +42,24 @@ function winner(){
         document.getElementById('restartButton').innerHTML = 'NEW GAME';
     }
 
-    // 
-    if( 
-        // check rows 
-        (arrOfItems[1] == arrOfItems[2] && arrOfItems[2] == arrOfItems[3] && arrOfItems[1] != '') ||
-        (arrOfItems[4] == arrOfItems[5] && arrOfItems[5] == arrOfItems[6] && arrOfItems[4] != '') ||
-        (arrOfItems[7] == arrOfItems[8] && arrOfItems[8] == arrOfItems[9] && arrOfItems[7] != '') ||
-
-        // check columens 
-        (arrOfItems[1] == arrOfItems[4] && arrOfItems[4] == arrOfItems[7] && arrOfItems[4] != '') ||
-        (arrOfItems[2] == arrOfItems[5] && arrOfItems[5] == arrOfItems[8] && arrOfItems[5] != '') ||
-        (arrOfItems[3] == arrOfItems[6] && arrOfItems[6] == arrOfItems[9] && arrOfItems[6] != '') ||
-
-        // check X
-        (arrOfItems[1] == arrOfItems[5] && arrOfItems[5] == arrOfItems[9] && arrOfItems[5] != '') ||
-        (arrOfItems[3] == arrOfItems[5] && arrOfItems[5] == arrOfItems[7] && arrOfItems[5] != '') 
-    ){
-        if(turn == 'x'){
-            titleY.innerHTML = 'O > Winner';
-            document.getElementById('restartButton').innerHTML = 'NEW GAME';
-            titleX.innerHTML = 'X'
-            gameIsFinish = true;
-            
-        } else if( turn == 'o'){
-            titleX.innerHTML = 'X > Winner';
-            document.getElementById('restartButton').innerHTML = 'NEW GAME';
-            titleY.innerHTML = 'O';
-            gameIsFinish = true;
-            
-        }
-     }
-
-
+    // check winner
+    if(arrOfItems[1] == arrOfItems[2] && arrOfItems[2] == arrOfItems[3] && arrOfItems[1] != ''){
+        whoWin(1, 2, 3);   
+    } else if(arrOfItems[4] == arrOfItems[5] && arrOfItems[5] == arrOfItems[6] && arrOfItems[4] != '') {
+        whoWin(4, 5, 6);
+    } else if(arrOfItems[7] == arrOfItems[8] && arrOfItems[8] == arrOfItems[9] && arrOfItems[7] != '') {
+        whoWin(7, 8, 9);
+    } else if(arrOfItems[1] == arrOfItems[4] && arrOfItems[4] == arrOfItems[7] && arrOfItems[4] != '') {
+        whoWin(1, 4, 7);
+    } else if(arrOfItems[2] == arrOfItems[5] && arrOfItems[5] == arrOfItems[8] && arrOfItems[5] != '') {
+        whoWin(2, 5, 8);
+    } else if(arrOfItems[3] == arrOfItems[6] && arrOfItems[6] == arrOfItems[9] && arrOfItems[6] != '') {
+        whoWin(3, 6, 9);
+    } else if(arrOfItems[1] == arrOfItems[5] && arrOfItems[5] == arrOfItems[9] && arrOfItems[5] != '') {
+        whoWin(1, 5, 9);
+    } else if(arrOfItems[3] == arrOfItems[5] && arrOfItems[5] == arrOfItems[7] && arrOfItems[5] != '') {
+        whoWin(3, 5, 7);
+    }
 }
 
 
