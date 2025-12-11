@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link href="/output.css" rel="stylesheet">
+</head>
+<body class = "bg-neutral-200">
+    <main class = "">
+
+        <!-- players -->
+        <div class = "flex justify-center ">
+            <!-- player one -->
+            <div class = "mt-5 mr-5 ml-2.5 w-100 rounded-xl">
+                <h2 class = "bg-gray-950 text-white p-2.5 text-center rounded-t-2xl">PLAYER ONE</h2>
+                <div class = "bg-neutral-800 text-white text-3xl p-6 text-center rounded-b-2xl titleX">X</div>
+            </div>
+            <!-- player two -->
+             <div class = "mt-5 ml-5 mr-2.5 w-100 ">
+                <h2 class = "bg-gray-950 text-white p-2.5 text-center rounded-t-2xl">PLAYER TWO</h2>
+                <div class = "bg-neutral-800 text-white text-3xl p-6 text-center rounded-b-2xl titleY">O</div>
+             </div>
+        </div>
+
+        <!-- Game Section -->
+        <section class="flex justify-center">
+            <div class = " my-5 w-180 text-center ">
+                <div id=""></div>
+                <div class = "bg-neutral-800 rounded-xl flex justify-center p-20  text-center">
+                    
+                    <div id="endDiv">
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item1"></div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item4"></div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item7"></div>
+                    </div>
+                    
+
+                    <div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item2"></div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item5"></div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item8"></div>
+                    </div>
+
+                    <div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item3"></div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item6"></div>
+                        <div class = "square w-24 h-24 my-1 mx-0.5 bg-white rounded-2xl hover:bg-gray-300 cursor-pointer text-7xl text-gray-950" onclick="game(this.id)" id = "item9"></div>
+                    </div>
+                </div>
+
+                <!-- Restart Game Button -->
+                <div>
+                    <button id = "restartButton" onclick = "restart()" class = "bg-neutral-800 m-3 p-3 w-50 cursor-pointer rounded-2xl text-white text-xl hover:bg-neutral-900">RESTART GAME</button>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+</body>
+<script src="master.js"></script>
+</html>
